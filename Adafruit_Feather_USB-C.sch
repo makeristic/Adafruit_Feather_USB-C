@@ -224,7 +224,9 @@ P 850 1250
 F 0 "J1" V 1000 1350 50  0000 L CNN
 F 1 "Conn_Battery" H 900 1150 50  0000 C CNN
 F 2 "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal" H 850 1250 50  0001 C CNN
-F 3 "~" H 850 1250 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/2004071131_JST-Sales-America-S2B-PH-SM4-TB-LF-SN_C295747.pdf" H 850 1250 50  0001 C CNN
+F 4 "C295747" H 850 1250 50  0001 C CNN "LCSC Part #"
+F 5 "S2B-PH-SM4-TB(LF)(SN)" H 850 1250 50  0001 C CNN "Manufacturer Part #"
 	1    850  1250
 	0    -1   -1   0   
 $EndComp
@@ -235,7 +237,9 @@ P 1650 1500
 F 0 "J2" H 1757 2367 50  0000 C CNN
 F 1 "USB_C_Receptacle_USB2.0" H 1757 2276 50  0000 C CNN
 F 2 "Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11" H 1800 1500 50  0001 C CNN
-F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 1800 1500 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/2002271811_XKB-Enterprise-U262-161N-4BVC11_C319148.pdf" H 1800 1500 50  0001 C CNN
+F 4 "C319148" H 1650 1500 50  0001 C CNN "LCSC Part #"
+F 5 "U262-161N-4BVC11" H 1650 1500 50  0001 C CNN "Manufacturer Part #"
 	1    1650 1500
 	1    0    0    -1  
 $EndComp
