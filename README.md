@@ -1,4 +1,4 @@
-# Adafruit_Feather
+# Adafruit Feather USB-C Template
 
 ## Template
 
