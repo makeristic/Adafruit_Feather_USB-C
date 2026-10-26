@@ -1,21 +1,43 @@
-# Adafruit Feather USB-C Template
+# Adafruit Feather USB-C KiCad template
 
-## Template
+A KiCad project template for designing USB-C boards around the [Adafruit Feather specification](https://learn.adafruit.com/adafruit-feather/feather-specification). It includes the board outline, mounting holes, 12-pin and 16-pin headers, a USB-C receptacle, and a two-pin JST PH battery connector.
 
-This project template was created based on the Adafruit Feather Specification: https://learn.adafruit.com/adafruit-feather/feather-specification
+![USB-C Feather template board outline and connector placement](meta/brd.png)
 
-This template should be enough to get you started desigining your own Feather board.
-It includes the outline, holes, headers, the usb and battery connectors.
+## Status
 
-<p>The board outline looks like the following:</p>
+This is a starting layout, with no routed PCB tracks. The USB-C connector symbol is placed, but the USB data, VBUS, and CC connections still need to be designed. Add the required USB-C termination, power circuitry, controller, and application circuit before fabrication. The checked-in PCB was saved by KiCad 5.1.6; its legacy schematic and project formats are retained. This documentation update does not establish electrical or manufacturing validation.
 
-![Sample image of the board](meta/brd.png)
+## Use the template
 
-This project is open source.
-(c) 2019 <a href="https://twitter.com/arturo182" target="_blank">arturo182</a>
+```sh
+git clone https://github.com/makeristic/Adafruit_Feather_USB-C.git
+```
 
-## Installation
+1. Copy the `Adafruit_Feather_USB-C` directory, including `meta/`, into your KiCad user templates directory. The archived [KiCad 5.1 template-location documentation](https://docs.kicad.org/5.1/en/kicad/kicad.html#template_locations) describes the directory layout.
+2. In KiCad, create a project from a template and select this template under User Templates. Alternatively, open [Adafruit_Feather_USB-C.pro](Adafruit_Feather_USB-C.pro) to inspect the source.
+3. Install KiCad's standard symbol, footprint, and 3D-model libraries. The source uses standard `Connector`, `Connector_Generic`, and `power` symbols and connector footprints; 3D models reference `${KISYS3DMOD}`.
+4. Work in a copy when opening with a newer KiCad release, which may convert the legacy files. Review the Feather pinout, connector orientation, and all USB-C and power connections, then run ERC and DRC on your completed design.
 
-Copy this to your KiCad User Templates Directory: https://docs.kicad-pcb.org/5.0/en/kicad/kicad.html#template_locations
+The schematic identifies USB-C connector `U262-161N-4BVC11` (LCSC `C319148`) and battery connector `S2B-PH-SM4-TB(LF)(SN)` (LCSC `C295747`). Verify the selected parts against their current datasheets before ordering.
 
-Original source: https://github.com/KiCad/kicad-templates/pull/23/files#diff-a7a7ac8a622f8aa19b54fb2f3cf42329 from <a href="https://twitter.com/arturo182" target="_blank">arturo182</a>
+## Files
+
+- [Adafruit_Feather_USB-C.sch](Adafruit_Feather_USB-C.sch): legacy schematic with connector pin labels and connector part numbers.
+- [Adafruit_Feather_USB-C.kicad_pcb](Adafruit_Feather_USB-C.kicad_pcb): board outline and placed footprints.
+- [Adafruit_Feather_USB-C-cache.lib](Adafruit_Feather_USB-C-cache.lib): cached schematic symbols.
+- [meta/](meta/): KiCad template description, icon, and board preview.
+
+No firmware, BOM export, or Gerber fabrication package is included.
+
+## Related projects and contributions
+
+Use [Adafruit_Feather](https://github.com/makeristic/Adafruit_Feather) for the original Micro-USB variant. [Feather_STM32WB55](https://github.com/makeristic/Feather_STM32WB55) is a separate STM32WB55 board design; [Makeristic-KiCad-Library](https://github.com/makeristic/Makeristic-KiCad-Library) contains additional parts and a USB-C connector model.
+
+Report problems through [GitHub issues](https://github.com/makeristic/Adafruit_Feather_USB-C/issues), including your KiCad version and any missing-library messages. For layout changes, include schematic or board screenshots and explain any change to Feather compatibility.
+
+## Attribution and licence
+
+Original template copyright © 2019 [arturo182](https://twitter.com/arturo182), from [KiCad/kicad-templates pull request #23](https://github.com/KiCad/kicad-templates/pull/23/files#diff-a7a7ac8a622f8aa19b54fb2f3cf42329). Michael Cutler adapted the template for USB-C in 2020; the original attribution remains in the template metadata.
+
+The [upstream licence at the source revision](https://github.com/KiCad/kicad-templates/blob/459d6bc93c55cfdac9f9b5d629b44cb891b5f2b8/LICENSE.md) is Creative Commons Attribution-ShareAlike 4.0 with the KiCad library exception. A copy is included in [LICENSE.md](LICENSE.md). The derived template has not been relicensed to MIT; consult the licence for the distinction between using library data in a design and redistributing the template collection.
